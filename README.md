@@ -1,45 +1,43 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Soccer assignment - readme.txt
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+## Table of contents.
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup and Launch](#setup)
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+## General info.
+>
+> For our fourth assignment, we were required to sort a CSV file with soccer results and create a table with points for each team.
+>
 
----
+## Technologies.
+>
+> Python 3.7.4
+>
 
-## Edit a file
+## What can be done using the program.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
-
----
-
-## Create a file
-
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+1. Loop each result into a list and split items.
+2. Compare results and add to dictionary.
+3. Sort the data by descending order so that the highest points are at the top.
 
 ---
 
-## Clone a repository
+## Setup and Launch
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+1. Download and install python 3.
+2. Go to CLI, check if python is installed correctly.
+3. Git clone the source code on bitbucket.
+4. Take the data below and place it in a file as a csv. Place this file in the same direcory as your cloned scorce code.
+5. Open A Command Prompt And cd to the source code.
+6. Run the source code in your terminal and pass 1 argument as your file (ending in '.csv'), like below:
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+'python soccer_assignment sample_data.csv'
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Data:
+
+Lions 3, Snakes 3
+Tarantulas 1, FC Awesome 0
+Lions 1, FC Awesome 1
+Tarantulas 3, Snakes 1
+Lions 4, Grouches 0
