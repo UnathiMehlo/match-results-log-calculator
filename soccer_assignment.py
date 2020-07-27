@@ -1,14 +1,14 @@
 import argparse
 import csv
 from collections import defaultdict
-from operator import itemgetter
 
 
 class SoccerLeague:
     def split_data(self, input_file):
+        x = input_file
         matches = []
-        for row in input_file:
-            match = [i.rsplit(' ', 1) for i in row]
+        for row in x:
+            match = [i.rstrip().rsplit(' ', 1) for i in row]
             matches.append(match)
         return matches
 
@@ -33,22 +33,26 @@ class SoccerLeague:
 
     def sort_results(self, input_data):
         log = self.compare_scores(input_data)
-        sorted_data = sorted(log.items(), key=itemgetter(0))
-        rankings = sorted(sorted_data, key=itemgetter(1), reverse=True)
+        rankings = sorted(log.items(), key=lambda kv: (-kv[1], kv[0]))
         return rankings
 
     def rank_teams(self, input_data):
         final_standings = ''
         rankings = self.sort_results(input_data)
-        for rank in rankings:
-            if rank[1] == 1:
+        previous_pts = None
+        for indx, (team, points) in enumerate(rankings, 0):
+            if points != previous_pts:
+                indx += 1
+                previous_pts = points   
+            
+            if points == 1:
                 points_suffix = "pt"
             else:
                 points_suffix = "pts"
 
-            final_standings += '{}. {}, {} {}\n'.format(rankings.index(rank) + 1, rank[0], rank[1], points_suffix)
-
+            final_standings += f'{indx}. {team} {points} {points_suffix}\n'
         print(final_standings)
+        # I'm returning 'final_standings' to test the 'rank_teams' method.
         return final_standings
 
 
